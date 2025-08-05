@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error 
+import matplotlib.pyplot as plt
 print("importing libraries done")
 
 print("loading data")
@@ -39,3 +40,9 @@ mse = mean_squared_error(y_test, y_pred)
 # Print the evaluation metrics
 print(f'R^2 Score: {r2}')
 print(f'Mean Squared Error: {mse}')
+# predict
+# whole dataset
+y_all_pred = model.predict(scaler.transform(X))
+#print r^2_score for whole dataset
+r2_all = r2_score(y, y_all_pred)
+print(f'R^2 Score for whole dataset: {r2_all}')
