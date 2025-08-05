@@ -21,4 +21,5 @@ print("New row count after augmentation:", len(df_augmented))
 # Save back to the same file path (overwrite)
 df_augmented.to_csv(file_path, index=False)
 
-print("✅ 500 rows duplicated and saved back to data.csv")
+print(df_augmented.shape)  # Print the first few rows to verify
+print("Data augmentation completed and saved to", file_path)
